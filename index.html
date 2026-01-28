@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Web Layout </title>
+<style>
+.container {
+    display: flex;
+    width: 100%;
+}
+
+article {
+    padding: 20px;
+    width: 70%;
+    background-color: lightblue;
+    min-height: 300px;
+}
+
+.sidebar {
+    width: 30%;
+    background-color: pink;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar ul li a:hover {
+    background-color:  ;
+}
+
+ul.nav {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: blue;
+}
+
+ul.nav li a {
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.nav li a:hover {
+    background-color: lightgrey;
+    color: white;
+}
+
+header {
+    background-color: purple;
+    padding: 5px;
+    text-align: center;
+    font-size: 35px;
+    color: black;
+}
+
+footer {
+    background-color: purple ;
+    padding: 5px;
+    text-align: center;
+    color: black;
+}
+
+section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: black;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: lightgrey;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: blue;
+  min-width: auto;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: lightblue;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+</style>
+</head>
+
+<body>
+<header>
+ <h2>SDIHS</h2>
+ <h3 style="font-size: 18px;"> Santo Domingo Integrated High School</h3>
+</header>
+
+<ul class="nav">
+<li><a href="#" onclick="loadContent('home')">Home</a></li>
+<li class="dropdown">
+<a href="javascript:void(0)" class="dropbtn">Activities</a>
+<div class="dropdown-content">
+<a href="#" onclick="loadContent('activity1')">Activity #1</a>
+<a href="#" onclick="loadContent('activity2')">Activity #2</a>
+<a href="#" onclick="loadContent('activity3')">Activity #3</a>
+</div>
+</li>
+<li class="dropdown">
+<a href="javascript:void(0)" class="dropbtn">Assessment</a>
+<div class="dropdown-content">
+<a href="#" onclick="loadContent('assessment1')">Assessment #1</a>
+<a href="#" onclick="loadContent('assessment2')">Assessment #2</a>
+<a href="#" onclick="loadContent('assessment3')">Assessment #3</a>
+</div>
+</li>
+<li><a href="#" onclick="loadContent('reference')">Reference</a></li>
+<li><a href="#" onclick="loadContent('about')">About</a></li>
+</ul>
+
+<section>
+<div class="container">
+<nav class="sidebar">
+ <ul>
+<li><a href="#" onclick="loadContent('content')">Content</a></li>
+<li><a href="#" onclick="loadContent('performance')">Performance Standard</a></li>
+<li><a href="#" onclick="loadContent('content standard')">Content Standard</a></li>
+<li><a href="#" onclick="loadContent('competencies')">Learning Competencies</a></li>
+<li><a href="#" onclick="loadContent('objectives')">Objectives</a></li>
+</ul>
+</nav>
+
+<article id="content">
+<h2>Batang Santo, Likas Aktibo</h2>
+<h2>WELCOME TO OUR PERFORMANCE</h2>
+
+</article>
+</div>
+</section>
+
+<footer>
+<p>Fourth Year Student Batch 2025-2026.</p>
+</footer>
+
+<script>
+function loadContent(section) {
+const content = document.getElementById('content');
+
+if (section === 'home') {
+content.innerHTML = `
+   <h1>Santo Domingo Integrated High School</h1>
+      <p>
+   <h2>School Profile</h2>
+   <h3>Mission</h3>
+   <p>
+         To protect and promote the right of every Filipino to quality, equitable, culture-based, and complete basic education where: Students learn in a child-friendly, gender, sensitive, safe and motivating environment.<br>
+
+<br>Teachers facilitate learning and constantly nurture every learner Administrators and staff, as stewards of the Institution, Ensure an enabling and supportive environment for effective learning to happen.</br>
+
+<br>Family, community and other stakeholders are actively engaged and share responsibility for developing lifelong learners.</br>
+
+   <h3>Vision</h3>
+   <p>
+         We dream of Filipinos who passionately love their country and whose competencies and values enable them to realize their full potential and contribute meaningfully to building the nation.<br>
+
+<br>As a learner-centered public institution, the Department of Education continuously improves itself to better service its stakeholders.</br>
+
+   <h3>Core Values</h3>
+   <p>
+Maka-Diyos
+<br>Maka-tao
+<br>Maka-kalikasan
+<br>Maka-bansa
+        </p>
+`;
+} else if (section === 'about') {
+content.innerHTML = `
+   <h2>Group Members</h2>
+   <ul>
+     <li><a href="https://www.facebook.com/edralyn.delpilar" target="_blank">Edralyn Del Pilar</a></li>
+
+     <li><a href="https://www.facebook.com/share/1AKBBsrB6R/" target="_blank">Caila Tingson</a></li>
+
+     <li><a href="https://www.facebook.com/share/1C3P7oGxpc/" target="_blank">Anne Jullienne Verzosa</a></li>
+
+     <li><a href="https://www.facebook.com/share/18CMRHAWqy/" target="_blank">Jessa Mae Villaruel</a></li>
+
+     <li><a href="https://www.facebook.com/huzien.moncada" target="_blank">Huzien Moncada</a></li>
+   </ul>
+`;
+} else if (section === 'content') {
+content.innerHTML = `
+<h1>Exploring Agricultural Horizons</h1>
+<h2>Career Opportunities</h2>
+   <p><strong>Agriculturist</strong> - A professional who studies and applies scientific principles to crop production, soil management, and agricultural sustainability.</p>
+   <p><strong>Farm Technician</strong> - A skilled worker who maintains farm equipment, assists with crop and livestock care, and implements agricultural practices.</p>
+   <p><strong>Farm Owner</strong> - An individual who owns and manages a farm, overseeing operations, production, and business aspects.</p>
+
+   <h3>Business opportunities</h3>
+   <p><strong>Trader</strong> - A person who buys and sells agricultural products, connecting farmers with markets.</p>
+    <p><strong>Entrepreneur</strong> - Someone who starts and runs agricultural businesses, such as processing plants, supply stores, or organic farms.</p>
+
+   <h3>Agricultural Tools, Implements, and Equipment</h3>
+    <p>-Tools</p>
+    <p>-Shovel</p>
+    <p>-Rake</p>
+    <p>-Hoe</p>
+    <p>-Plow</p>
+
+<h2>Implements</h2>
+     <p>-Tractor
+     <p>-Harvester
+    <p>-Irrigation System
+
+<h2>Equipment</h2>
+    <p>-Safety Goggles</p>
+    <p>-Gloves</p>
+    <p>-First Aid Kit</p>
+
+<h2>Uses of Agricultural Tools, Implements, and Equipment</h2>
+<h3>Shovel</h3>
+<p>-Digging soil, planting plants</p>
+<h3>Rake</h3>
+<p>-Removing weeds, leveling soil</p>
+<h3>Hoe</h3>
+<p>-Removing weeds, working the soil</p> <h3>Tractor</h3>
+<p>-Working the soil, harvesting products</p>
+
+<h2>Precautionary and Safety Procedures</h2>
+
+<h1>Use safety equipment</h1>
+<p>-Inspect tools and equipment before use</p>
+<p>-Do not use tools and equipment, if you are not sure how to use them</p>
+<p>-Be careful with hazardous materials (chemicals, etc.)</p>
+
+<h2>Agricultural Hazards and Risks</h2>
+
+<h3>Chemicals</h3>
+<p>-Pesticides, fertilizers, etc.</p>
+<h3>Machinery</h3>
+<p>-Tractor, harvester, etc.</p>
+<h3>Animals</h3>
+<p>-Sick animals, etc.</p>
+<h3>Disasters</h3>
+<p>-Typhoons, earthquakes, etc</p>
+`;
+} else if (section === 'performance') {
+content.innerHTML = `
+   <h2>Performance Standard</h2>
+<p>
+   <h1>The learners convert number systems in practical scenarios</h1>
+   <p>Learners convert number systems (Binary, Octal, Hexadecimal, Decimal) in practical scenarios to understand digital data representation, computer processes, and real-world applications in fields like finance, engineering, and IT, applying conversion skills for tasks like coding, data analysis, or hardware interaction. This involves using methods like repeated division (decimal to others) and grouping bits (binary to others) to translate between these bases for concrete problems.</p>
+
+<h2>Practical Applications & Scenarios:</h2>
+<h3>Computer Programming:</h3><p> Translating memory addresses (hexadecimal) or bit patterns (binary) into readable decimal values for debugging.
+Networking: Understanding IP addresses (often dotted-decimal, but subnet masks use binary) and MAC addresses (hexadecimal).</p>
+
+<h3>Digital Electronics:</h3><p> Interpreting signals from circuits, where binary (0s/1s) drives displays or logic gates, and converting to octal/hex for easier monitoring.</p>
+
+<h3>Data Storage:</h3><p>Recognizing how binary data is compressed or represented in different file sizes.
+Cryptography: Encoding messages using different bases for security. </p>
+
+`;
+} else if (section === 'content standard') {
+content.innerHTML = `
+   <h2>Content Standard</h2>
+   <h1>Demonstrate an understanding of the concepts and skills in Agros-Crops and Animal Production </h1>
+
+<h2>Agros-Crops:</h2>
+<h3>Crop Selection:</h3>
+<p>-Choose crops suitable for the climate and soil</p>
+<h3>Planting:</h3>
+<p>-Plant seeds at the right distance and depth</p>
+<h3>Crop Care:</h3>
+<p>-Water, fertilize, and protect crops from pests and diseases</p>
+<h3>Harvesting:</h3>
+<p>-Harvest crops at the right time and method</p>
+
+<h2>Animal Production</h2>
+
+<h3>Animal Selection:</h3>
+<p>-Choose animals suitable for the climate and production purpose</p>
+<h3>Animal Care:</h3>
+<p>-Feed, water, and protect animals from diseases and pests</p>
+<h3>Breeding:</h3>
+<p>-Breed animals for reproduction or adoption</p>
+<h3>Health Care:</h3>
+<p>-Care for animal health and ensure their well-being</p>
+
+<h2>Skills</h2>
+
+<h3>Soil Identification:</h3>
+<p>-Identify soil types and suitable crops</p>
+<h3>Equipment Use:</h3>
+<p>-Use equipment safely and correctly</p>
+<h3>Animal Handling:</h3>
+<p>-Handle animals safely and humanely</p>
+<h3>Crop and Animal Monitoring:</h3>
+<p>-Monitor crops and animals for problems and diseases</p>
+   <p></p>
+`;
+} else if (section === 'competencies') {
+content.innerHTML = `
+  <h2>Learning Competencies</h2>
+  <h1>Learning competencies no.1</h1>
+<p>Career opportunities in agriculture are vast, extending far beyond traditional farming to include roles in science & technology,business & management,environmental management,covering everything from crop/animal care and research to marketing and policy.</p>
+
+<h1>Learning competencies no.2 and 3</h1>
+</h3> Agricultural implements are typically accessories that require a separate power source (animal or machinery) to operate, while equipment refers to the self-powered machinery itself differentiation summary feature tools implements equipment power source manual labor pulled by animals or mounted on machinery, self-powered by engines or motors (e.g., diesel, electric)
+scale of use small-scale tasks (e.g., gardening) medium to large-scale, often field preparation large-scale, extensive farming operations
+complexity simple, hand-held devices accessories that perform specific functions when attached to power Complex, often multi-functional machine.</p>
+
+<h2>Common Tools, Implements, and Equipment
+Tools (Hand-operated, manual)</h2>
+<p>-Bolo / Cutlass</p>
+<p>-Hoe (hand hoe, grab hoe)</p>
+<p>-Rake</p>
+<p>-Shovel / Spade</p>
+<p>-Pruning shears / Knife</p>
+<p>-Wheelbarrow</p>
+<p>-Sickle</p>
+
+<h2>Implements (Accessories pulled by power source) </h2>
+<p>-Plow (disc plow, moldboard plow</p>
+<p>-Harrow (disc harrow, spike harrow</p>
+<p>-Cultivator / Rotavator</p>
+<p>-Seed drill / Planter</p>
+<p>-Sprayer</p>
+<p>-Baler</p>
+
+<h2>Equipment (Self-powered machinery)</h2>
+<p>-Tractor</h3>
+<p>-Combine harvester</p>
+<p>-Irrigation systems (center pivot, drip)</p>
+<p>-Water pump</p>
+<p>-Rice thresher</p>
+<p>-Backhoe / Loader</p>
+
+<h1>Learning competencies no.4 and 5</h1>
+<p>Farm operations involve various safety hazards that require specific procedures to mitigate risks. Key safety procedures focus on machinery, chemical, biological, and physical hazards, as well as robust emergency preparedness and worker training.</p>
+
+<h2>Safety Procedures in Farm Operations</h2>
+<p>-Training and Education,Use of Personal Protective Equipment (PPE) Appropriate PPE </p>
+<p>-Machinery and Equipment Safety,Chemical Safety</p>
+<p>-Emergency Preparedness,General Health and Housekeeping</p>
+
+<h2>Hazards and Risks in Farm Operations</h2>
+<p>-Machinery and Equipment</p>
+<p>-Chemical Exposure</p>
+<p>-Biological Hazards,Physical and Environmental Hazards</p>
+<p>-Musculoskeletal and Ergonomic Hazards</p>
+<p>-Psychological Hazards</p>
+<p>-Electrical Hazards</p>
+`;
+} else if (section === 'objectives') {
+content.innerHTML = `
+   <h2>Objectives</h2>
+   <p>1.The reader should acquire essential knowledge and valuable insights that will broaden their perspective on the subject.</p>
+   <p>2.Readers must gain essential insights and a clear understanding of the core message.</p>
+   <p>3.Describe Farming method</p>
+   <p>4.Develope agricultural skills</p>
+`;
+} else if (section === 'activity1') {
+content.innerHTML = `
+    <h2>Activity no.1</h2>
+    <h1>Instructions:</h1>
+    <p>Match the items in Column A with the correct answer in Column B. Write only the letter of the correct answer.</p>
+
+    <h1>Column A</h1>
+    <p>1. Agriculturist</p>
+    <p>2. Farm Technician</p>
+    <p>3. Tractor</p>
+    <p>4. Hand Gloves</p>
+    <p>5. Hazard</p>
+
+    <h1>Column B</h1>
+    <p>A. Hand protection while working</p>
+    <p>B. Danger that may cause an accident</p>
+    <p>C. Machinery used for tilling the soil</p>
+    <p>D. Expert in the study of crops and soil</p>
+    <p>E. Assists in running or operating the farm.</p>
+  `;
+} else if (section === 'activity2') {
+content.innerHTML = `
+    <h2>Activity no.2</h2>
+    <h2>Finger Topic Sharing Game</h2>
+    <h1>Instructions:</h1>
+    <p>1. Gather Materials:</p>
+<p>-Just your hands (or you can draw a hand on a piece of paper if you prefer writing it down).</p>
+    <p>2. Pick Your Topics:</p>
+<p>-Focus on Hazards and Agriculturist as main themes, plus related agriculture topics you want to cover.</p>
+    <p>3. Assign to Fingers:</p>
+<p>-Each finger on one hand represents a different sub-topic related to the main themes.</p>
+    <p>4. Fill Each Finger:</p>
+<p>-For every finger, share one thing you know about its assigned sub-topic, it can be a fact, something you&apos;ve observed, or what you&apos;ve learned.</p>
+    <p>5. How to Play:</p> 
+<p>-You can do this alone to organize what you know, or take turns with others where each person shares what&apos;s on their fingers. Feel free to add more sub-topics by using the other hand too!</p>
+    <p>6. Sub-topic Ideas to Assign:</p>
+    <ul>
+        <li>Thumb:</li>
+<p>What is a hazard in agriculture?</p>
+        <li>Index Finger:</li>
+<p>What does an agriculturist do day-to-day?</p>
+        <li>Middle Finger:</li>
+<p>Common hazards farmers face</p>
+        <li>Ring Finger:</li> 
+<p>How agriculturists help with hazard safety</p>
+        <li>Pinky Finger:</li>
+<p>Ways to reduce agricultural hazards</p>
+    </ul>
+  `;
+ } else if (section === 'activity3') {
+content.innerHTML = `
+    <h2>Activity no.3</h2>
+    <h2>Career & Business Match-Up Game</h2>
+    <h1>What You Need</h1>
+    <p>- 5 large paper signs (or sticky notes on walls)</p>
+    <p>- Marker or pen</p>
+    <p>- Open space to move around</p>
+    <p>- Optional: Small prizes (like stickers) for correct matches</p>
+
+    <h1>Set-up</h1>
+    <p>- On one side of the room/wall, tape up these 5 TERM signs:</p>
+    <ol>
+        <li>AGRICULTURIST</li>
+        <li>FARM TECHNICIAN</li>
+        <li>FARM OWNER</li>
+        <li>TRADER</li>
+        <li>ENTREPRENEUR</li>
+    </ol>
+    <p>- On the opposite side, tape up these 5 DESCRIPTION signs:</p>
+    <ol>
+        <li>&quot;I&apos;m an expert in crops and soil!&quot;</li>
+        <li>&quot;I help keep farm operations running smoothly!&quot;</li>
+        <li>&quot;I own and manage the entire farm!&quot;</li>
+        <li>&quot;I buy and sell agricultural products!&quot;</li>
+        <li>&quot;I start my own farm-related business!&quot;</li>
+    </ol>
+
+    <h1>How to Play</h1>
+    <p>1. Form teams of 2 or play individually</p>
+    <p>2. When the game starts, the leader calls out one TERM (e.g., &quot;AGRICULTURIST!&quot;).</p>
+    <p>3. Players run from the TERM side to the DESCRIPTION side and point to the matching one.</p>
+    <p>4. Once matched correctly, the player must act out the job for 10 seconds (e.g., pretend to check soil, talk to plants, or write notes).</p>
+    <p>5. The rest of the group shouts &quot;CORRECT!&quot; if the match and action are right.</p>
+    <p>6. Rotate turns so everyone gets a chance to run and act.</p>
+    <p>7. Optional rule: If a player matches wrong, they do a fun silly dance before trying again!</p>
+
+    <h1>Example Turns</h1>
+    <p>- Term: FARM OWNER  Match to &quot;I own and manage the entire farm!&quot; Act out giving instructions or checking fields.</p>
+    <p>- Term: TRADER  Match to &quot;I buy and sell agricultural products!&quot;  Act out carrying crates or negotiating a price.</p>
+    <p>- Term: ENTREPRENEUR  Match to &quot;I start my own farm-related business!&quot;  Act out setting up a small shop or making a product</p>
+  `;
+} else if (section === 'assessment1') {
+    content.innerHTML = `
+    <h2>Assessment no.1</h2>
+    <h1>Instructions:</h1>
+    <p>Read the situation and answer the questions.</p>
+    <h1>Situation:</h1>
+    <p>Ana is helping out on their farm. She is using a bolo (itak) but is not wearing gloves, and she is only wearing slippers.</p>
+    
+    <h1>Question:</h1>
+<p>1.What is the possible hazard in the situation?</p>
+<p>2.What safety procedure should Ana follow?</p>
+<p>3.What agricultural tool was used?</p>
+<p>4.Why is it important to follow safety procedures on the farm?</p>
+    `;
+} else if (section === 'assessment2') {
+    content.innerHTML = `
+    <h2>Assessment no.2</h2>
+    <p>Instructions:</p>
+    <p>Choose the letter of the correct answer.</p>
+    <p>I. Multiple Choice</p>
+<p>1.Who is the expert in the study of crops and soil?</p>
+  <p>A. Trader</p>
+  <p>B. Farm Technician</p>
+  <p>C. Agriculturist</p>
+  <p>D. Entrepreneur</p>
+<p>2.Which of the following is considered a business opportunity in agriculture?</p>
+  <p>A. Tractor</p>
+  <p>B. Entrepreneur</p>
+  <p>C. Gloves</p>
+  <p>D. Hazard</p>
+<p>3.What do you call a danger that may occur while working on a farm?</p>
+  <p>A. Safety</p>
+  <p>B. Equipment</p>
+  <p>C. Hazard</p>
+  <p>D. Implement</p>
+<p>4.Which of the following is used for hand protection?</p>
+  <p>A. Bolo</p>
+  <p>B. Gloves</p>
+  <p>C. Tractor</p>
+  <p>D. Shovel</p>
+<p>5.Which is the common number system used by humans?</p>
+  <p>A. Binary</p>
+  <p>B. Octal</p>
+  <p>C. Hexadecimal</p>
+  <p>D. Decimal</p>
+
+    <p>II. True Or False</p>
+    <p>Instructions:</p>
+<p>Write TRUE if the statement is correct and FALSE if it is not.</p>
+<p>1.A tractor is a type of agricultural equipment.</p>
+<p>2.Safety procedures are not important in farm operations.</p>
+<p>3.The binary number system uses 0 and 1.</p>
+<p>4.Spreadsheet software is used only for writing letters.</p>
+<p>5.Presentation software is used for creating slides.</p>
+    `;
+} else if (section === 'assessment3') {
+        content.innerHTML = `
+    <h1>Assessment no.3</h1>
+    <hp>Instructions:</p>
+    <p>Choose the letter of the correct answer.</p>
+   <p>I. Multiple Choice</p>
+
+         <p>1. What is the term for a danger that may occur in agricultural activities?</p>
+         <p>A. Safety</p>
+         <p>B. Hazard</p>
+         <p>C. Risk</p>
+         <p>D. Equipment</p>
+
+         <p>2. Which of the following is an example of an agricultural hazard?</p>
+         <p>A. Flood</p>
+         <p>B. Pest</p>
+         <p>C. Plant disease</p>
+         <p>D. All of the above</p>
+
+         <p>3. What is the process of evaluating the likelihood of a hazard occurring called?</p>
+         <p>A. Hazard identification</p>
+         <p>B. Risk assessment</p>
+         <p>C. Safety procedure</<p>D. Equipment maintenance</p>
+
+         <p>4. Which of the following is a way to reduce risk in agriculture?</p>
+         <p>A. Using equipment</p>
+         <p>B. Building an irrigation system</p>
+         <p>C. Using pest control methods</p>
+         <p>D. All of the above</p>
+
+         <p>5. Why is it important to identify hazards in agriculture?</p>
+         <p>A. To expand the farm</p>
+         <p>B. To increase yield</p>
+         <p>C. To ensure the safety of farmers</p>
+         <p>D. To save money</p>
+        `;
+} else if (section === 'reference') {
+content.innerHTML = `
+     <h2>References of this performance</h2>
+     <h3>G7-Quarter2-(Agriculture and Fishiry Art) </3> 
+ `;
+
+}}
+</script>
+</body>
+</html>
